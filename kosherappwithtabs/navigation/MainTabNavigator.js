@@ -13,14 +13,14 @@ const HomeStack = createStackNavigator({
 });
 
 HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+  tabBarLabel: 'Scan',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
       name={
         Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
+          ? `ios-qr-scanner${focused ? '' : '-outline'}`
+          : 'md-qr-scanner'
       }
     />
   ),
@@ -31,11 +31,11 @@ const AgenciesStack = createStackNavigator({
 });
 
 AgenciesStack.navigationOptions = {
-  tabBarLabel: 'Agencies',
+  tabBarLabel: 'Symbol List',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? `ios-link${focused ? '' : '-outline'}` : 'md-link'}
+      name={Platform.OS === 'ios' ? `ios-grid${focused ? '' : '-outline'}` : 'md-grid'}
     />
   ),
 };

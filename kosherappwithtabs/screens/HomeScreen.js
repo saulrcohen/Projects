@@ -8,15 +8,92 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { WebBrowser } from 'expo';
+import { WebBrowser, Camera, Permissions } from 'expo';
 
 import { MonoText } from '../components/StyledText';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
+    title: 'Scan',
     header: null,
   };
+  state = {
+    hasCameraPermission: null,
+    type: Camera.Constants.Type.back,
+    hasCameraRollPermission: null,
+  };
 
+  async componentWillMount(){
+    const { status } = await Permissions.askAsync(Permissions.CAMERA);
+    this.setState({hasCameraPermission : status === 'granted'});
+  }
+
+  async componentWillMount1(){
+    const {status1} = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+    this.setState({hasCameraRollPermission: status1 === 'granted'})
+    const { uri } = await camera.takePictureAsync();
+    const asset = await MediaLibrary.createAssetAsync(uri);
+  }
+
+  render() {
+  const { hasCameraPermission } = this.state;
+  if (hasCameraPermission === null) {
+    return <View />;
+  } else if (hasCameraPermission === false) {
+    return <Text>No access to camera</Text>;
+  } else {
+    return (
+        <Camera style={{ flex: 1 }} type={this.state.type}>
+          <View style = {styles.tabBarInfoContainer}>
+
+            <TouchableOpacity
+            style= {{
+              flex: 0.1,
+            }}>
+            <Image
+            source = {
+              require('../assets/images/camera.png')
+            }
+            style = {styles.welcomeImage}
+            />
+            </TouchableOpacity>
+          </View>
+        </Camera>
+    );
+  }
+}
+}
+/**
+
+<TouchableOpacity
+  style={{
+    flex: 0.1,
+    justifyContent: 'flex-end',
+    //alignItems: 'center',
+  }}
+  onPress={() => {
+    this.setState({
+      type: this.state.type === Camera.Constants.Type.back
+        ? Camera.Constants.Type.front
+        : Camera.Constants.Type.back,
+    });
+  }}>
+  <Image
+  style = {{
+    width: 100,
+    height: 80,
+    resizeMode: 'contain',
+    marginTop: 3,
+    marginLeft: -10,
+    position: 'absolute',
+    bottom: 0,
+    right : 0,
+  }}
+  source = {
+    require('../assets/images/flipcam.png')
+  }
+  />
+</TouchableOpacity>
   render() {
     return (
       <View style={styles.container}>
@@ -97,6 +174,7 @@ export default class HomeScreen extends React.Component {
     );
   };
 }
+*/
 
 const styles = StyleSheet.create({
   container: {
@@ -163,7 +241,7 @@ const styles = StyleSheet.create({
       },
     }),
     alignItems: 'center',
-    backgroundColor: '#fbfbfb',
+    backgroundColor: 'white',
     paddingVertical: 20,
   },
   tabBarInfoText: {
