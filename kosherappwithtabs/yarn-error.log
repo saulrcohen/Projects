@@ -1,0 +1,45 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Shimon Cohen1\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add expo
+
+PATH: 
+  C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Git\cmd;C:\Program Files (x86)\PuTTY\;C:\Program Files\Java\jdk1.8.0_144\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\mingw32\bin;C:\Program Files\nodejs\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Git\cmd;C:\Program Files (x86)\PuTTY\;C:\Program Files\Java\jdk1.8.0_144\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\mingw32\bin;C:\Program Files\nodejs\;"C:\Users\Shimon Cohen1\AppData\Local\Microsoft\WindowsApps;";C:\Users\Shimon Cohen1\AppData\Local\Programs\MiKTeX 2.9\miktex\bin\x64\;C:\Users\Shimon Cohen1\AppData\Local\atom\bin;C:\PYTHON27;C:\Users\Shimon Cohen1\AppData\Roaming\npm;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;
+
+Yarn version: 
+  1.7.0
+
+Node version: 
+  8.11.2
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'C:\Users\Shimon Cohen1\Documents\Publicgit\kosherappwithtabs\node_modules\boom\lib'
+
+npm manifest: 
+  {
+    "main": "node_modules/expo/AppEntry.js",
+    "private": true,
+    "scripts": {
+      "test": "node ./node_modules/jest/bin/jest.js --watchAll"
+    },
+    "jest": {
+      "preset": "jest-expo"
+    },
+    "dependencies": {
+      "@expo/samples": "2.1.1",
+      "expo": "^27.0.1",
+      "react": "16.3.1",
+      "react-native": "https://github.com/expo/react-native/archive/sdk-27.0.0.tar.gz",
+      "react-navigation": "2.0.0"
+    },
+    "devDependencies": {
+      "jest-expo": "^27.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

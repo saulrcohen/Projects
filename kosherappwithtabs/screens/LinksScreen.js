@@ -1,8 +1,9 @@
 import React from 'react';
-import { FlatList, AppRegistry, SectionList, Image, ScrollView, StyleSheet, View, Text, Linking, Button, TouchableOpacity, Dimensions, Platform } from 'react-native';
+import { AppRegistry, SectionList, Image, ScrollView, StyleSheet, View, Text, Linking, Button, TouchableOpacity, Platform } from 'react-native';
+import { Text, View, StyleSheet, ScrollView, Image } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
 import { Camera, Permissions } from 'expo';
-import agencies from '../data/agencies';
+import Panel from 'C:\Users\Shimon Cohen1\Documents\Publicgit\kosherappwithtabs\components\Panel.js';
 
 
 
@@ -19,33 +20,55 @@ export default class LinksScreen extends React.Component {
     }
   };
 
+  selectionList = () => {
+    return([
+      {data: [{title: "Kof-K"}, {title: "OU"}, {title: "Star K"}], key: "NY"},
+      {data: [{title: 13}, {title: "OK"}], key: "NJ"},
+    ])
+  }
+
   render() {
-    var agencies = [
-      {key: 'OU', "image" : '//oukosher.org/content/uploads/2012/11/OU-Logo.jpg'},
-      {key: 'Kof-k', "image" : 'https://kosherquest.org/wp-content/uploads/2016/03/Kof-K-kosher-certification-e1454912904607.jpg'},
-      {key: 'star-k'}
-    ];
-
-        var NY = [{"name": 'OU', "image" : }
-         {"name": 'Star-k', "image": }
-         {"name: "'kof-k', "image" : }];
-
-        var IN = [{'Indiana Board of Kashrus'},
-        {'Indianapolis Beth din'}];
-
-
     return (
-    <ScrollView style={styles.container}>
+
+    <ScrollView style = {styles.container}>
+      <Card containerStyle={{padding: 0}} >
+        {
+          agencies.map((u, i) => {
+            return (
+              <ListItem
+              key={i}
+              roundAvatar style = {styles.picHeight}
+              rightTitle={u.name}
+              rightTitleStyle = {styles.rightTitle}
+              subtitle = {u.phone}
+              avatar={{uri:u.avatar}}
+              />
+            );
+          })
+        }
+      </Card>
+    </ScrollView>
+        )
+    }
+
+
+
+
+
+
+
+
+
+
+
+/**
       <View style = {{marginTop : (Platform.OS) = 'ios' ? 20 : 0}}>
         <SectionList
-        sections = {[
-          {title: 'New York, New Jersey', data: NY},
-          {title: "Indiana", data: IN},
-        ]}
+        sections = {this.selectionList()}
           renderSectionHeader = { ({section}) =>
-          <Text style = {{fontWeight: 'bold', fontSize : 24}}> {section.title}
+          <Text style = {{fontWeight: 'bold', fontSize : 24, textAlign: 'center'}}>{section.key}
           </Text>}
-          renderItem = { ({item}) => <Text>{item} </Text>}
+          renderItem = { ({item}) => <Text style = {{textAlign : 'center'}}> {item.title} </Text>}
           keyExtractor = {(item, index) => index}
           />
       </View>
@@ -78,6 +101,7 @@ export default class LinksScreen extends React.Component {
       </ScrollView>
     );
   }
+  */
 }
 
 
@@ -86,6 +110,11 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 15,
     backgroundColor: '#fff',
+  },
+  container1:{
+    flex            : 1,
+    backgroundColor : '#f4f7f9',
+    paddingTop      : 30
   },
   image:{
       justifyContent: 'center',

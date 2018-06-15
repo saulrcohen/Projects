@@ -50,12 +50,12 @@ export default class HomeScreen extends React.Component {
             style= {{
               flex: 0.1,
             }}>
-            <Image
-            source = {
-              require('../assets/images/camera.png')
-            }
-            style = {styles.welcomeImage}
-            />
+              <Image
+              source = {
+                require('../assets/images/camera.png')
+              }
+              style = {styles.welcomeImage}
+              />
             </TouchableOpacity>
           </View>
         </Camera>
