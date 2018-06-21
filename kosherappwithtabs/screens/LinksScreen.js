@@ -1,9 +1,6 @@
 import React from 'react';
-import { AppRegistry, SectionList, Image, ScrollView, StyleSheet, View, Text, Linking, Button, TouchableOpacity, Platform } from 'react-native';
-import { Text, View, StyleSheet, ScrollView, Image } from 'react-native';
-import { ExpoLinksView } from '@expo/samples';
-import { Camera, Permissions } from 'expo';
-import Panel from 'C:\Users\Shimon Cohen1\Documents\Publicgit\kosherappwithtabs\components\Panel.js';
+import { AppRegistry, Image, ScrollView, StyleSheet, View, Text, Linking Platform } from 'react-native';
+import { Card, ListItem } from 'react-native-elements';
 
 
 
@@ -21,7 +18,7 @@ export default class LinksScreen extends React.Component {
   };
 
   render() {
-      const NY = [
+      const agencies = [
           {
           name: "Orthodox Union",
           city: "Teaneck",
@@ -46,8 +43,6 @@ export default class LinksScreen extends React.Component {
             avatar: 'http://www.crcweb.org/images/images_agencies/0141~KAJ.jpg',
             phone: "845-425-9089"
           },
-        ];
-        const California = [
           {
             name: "Igud Hakashrus of Los Angeles",
             city: "Los Angeles",
@@ -77,7 +72,7 @@ export default class LinksScreen extends React.Component {
             city: "Los Angeles",
             avatar: 'https://i.vimeocdn.com/portrait/5679067_300x300',
             phone : "310-282-0444"
-          },
+          }
         ];
 
 
@@ -87,28 +82,7 @@ export default class LinksScreen extends React.Component {
        title = "New York"
        titleStyle = {styles.titleStyles}>
          {
-           NY.map((u, i) => {
-             return (
-               <ListItem
-               key={i}
-               title = {u.name}
-               titleStyle = {styles.rightTitle}
-               subtitle = {u.phone}
-               leftSubtitle = {u.city}
-               avatar={{uri:u.avatar}}
-               />
-             );
-           })
-         }
-       </Card>
-
-       //separate cards for different states
-       <Card
-       containerStyle={{padding: 5}}
-       title = "California"
-       titleStyle = {styles.titleStyles}>
-         {
-           California.map((u, i) => {
+           agencies.map((u, i) => {
              return (
                <ListItem
                key={i}
@@ -125,59 +99,7 @@ export default class LinksScreen extends React.Component {
      </ScrollView>
          )
      }
- }
-
-
-
-
-
-
-
-
-
-
-
-/**
-      <View style = {{marginTop : (Platform.OS) = 'ios' ? 20 : 0}}>
-        <SectionList
-        sections = {this.selectionList()}
-          renderSectionHeader = { ({section}) =>
-          <Text style = {{fontWeight: 'bold', fontSize : 24, textAlign: 'center'}}>{section.key}
-          </Text>}
-          renderItem = { ({item}) => <Text style = {{textAlign : 'center'}}> {item.title} </Text>}
-          keyExtractor = {(item, index) => index}
-          />
-      </View>
-
-
-
-
-      <View style={styles.welcomeContainer}>
-        <Image
-          source={
-               require('../assets/images/cRcApproved.png')
-          }
-            style = {styles.welcomeImage}
-        />
-        </View>
-          <View style = {styles.welcomeContainer}>
-              <Image style = {styles.image}
-                source ={
-                  require('../assets/images/Kehilla-Kosher.png')
-                }
-              />
-              <Text onPress={ ()=> Linking.openURL('http://www.koshermarks.com/business-directory/126/california-k/') }
-              style={styles.getStartedText}>
-              Igud Hakashrus of Los Angeles (Kehillah Kosher)
-              </Text>
-          </View>
-          <Button buttonStyle = {styles.button1}
-            title = "example"
-            onPress={() => {}}/>
-      </ScrollView>
-    );
-  }
-  */
+   }
 }
 
 
